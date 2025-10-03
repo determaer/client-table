@@ -26,7 +26,14 @@ const filters = ref({
       filterLocale="ru"
       :striped-rows="true"
       v-model:filters="filters"
+      paginator
+      rows="5"
       tableClass="w-full border-spacing-0 border-separate gap-5"
+      :pt="{
+        thead: {
+          class: 'bg-gray-50'
+        }
+      }"
     >
       <Column field="name" header="Наименование" sortable>
         <template #body="slotProps">
@@ -55,7 +62,11 @@ const filters = ref({
         <template #body="slotProps">
           <InputSwitch 
             v-model="slotProps.data.status"
-            class=""
+            :pt="{
+              slider: {
+                class: 'bg-blue-500'
+              }
+            }"
           />
         </template>
       </Column>
@@ -95,12 +106,12 @@ const filters = ref({
       </Column>
       <Column field="" header="QR" >
       <template #body="slotProps">
-        <Button class="rounded-md py-3 px-2 m-1 text-sm bg-blue-500 text-white cursor-pointer" icon="pi pi-qrcode" text />
+        <Button class="rounded-md py-2 px-2 m-1 text-sm bg-blue-500 text-white cursor-pointer" icon="pi pi-qrcode" text />
       </template>
       </Column>
       <Column field="" header="❌">
         <template #body="slotProps">
-          <Button class="rounded-md py-3 px-2 m-1 text-sm bg-red-500 text-white cursor-pointer fit-content" icon="pi pi-trash" text />
+          <Button class="rounded-md py-2 px-2 m-1 text-sm bg-red-500 text-white cursor-pointer fit-content" icon="pi pi-trash" text />
         </template>
       </Column>
       <template #empty> 
