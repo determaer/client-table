@@ -12,7 +12,7 @@ import { ref } from 'vue';
 const store = useClientsStore()
 
 const filters = ref({
-  name: {value: null, matchMode: FilterMatchMode.STARTS_WITH}
+  name: {value: null, matchMode: FilterMatchMode.CONTAINS}
 })
 
 </script>
