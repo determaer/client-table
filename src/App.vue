@@ -1,16 +1,20 @@
 <script setup>
 import { ApiClient } from './api-client/ApiClient';
 import { onBeforeMount } from 'vue';
+import ClientTable from './components/ClientTable.vue';
+import { useClientsStore } from './store/clientsStore';
+
+const store = useClientsStore()
 
 onBeforeMount(() => {
   const apiClient = new ApiClient()
-  console.log(apiClient.getClients())
+  store.setNewClients(apiClient.getClients())
 })
 </script>
 
 <template>
   <div>
-    
+    <client-table/>
   </div>
 </template>
 
