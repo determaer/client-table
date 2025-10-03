@@ -35,7 +35,13 @@ const filters = ref({
         }
       }"
     >
-      <Column field="name" header="Наименование" sortable>
+      <Column field="name" header="Наименование" sortable
+        :pt="{
+          filterMenuButton:{
+            class: 'invisible'
+          }
+        }"
+      >
         <template #body="slotProps">
           <Tag class="p-0">
             <div>
@@ -55,7 +61,7 @@ const filters = ref({
             @input="filterCallback()" 
             placeholder="Наименование" 
             class="w-40 leading-[normal] m-0 p-3 rounded-md text-gray-800 placeholder:text-gray-400 bg-white border border-gray-300 invalid:focus:ring-red-200 invalid:hover:border-red-500 hover:border-primary focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 focus:z-10 appearance-none transition-colors duration-200"
-            />
+          />
         </template>
       </Column>
       <Column field="status" header="Статус" >
