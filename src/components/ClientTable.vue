@@ -70,7 +70,6 @@ const filters = ref({
             v-model="slotProps.data.status"
             :pt="{
               slider: {
-                class: 'bg-blue-500'
               }
             }"
           />
