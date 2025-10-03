@@ -14,8 +14,9 @@ onBeforeMount(() => {
 
 <template>
   <div>
-    <client-table/>
+    Некоторая информация сверху
   </div>
+  <router-view></router-view>
 </template>
 
 <style scoped>
